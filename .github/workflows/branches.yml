@@ -1,9 +1,9 @@
 name: Veracode Static Analysis Demo
 on: workflow_dispatch
-  push:
-    branches:
-      - '*'
-      - '!master'
+  # push:
+  #   branches:
+  #     - '*'
+  #     - '!master'
     
 jobs:
   static_analysis:
