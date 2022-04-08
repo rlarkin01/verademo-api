@@ -14,13 +14,12 @@ jobs:
       - name: Check out main branch
         uses: actions/checkout@v2
 
-      - name: Zip Project
+      - name: Zip and Scan Project
         run: zip -R project.zip '*.py' '*.js' '*.php' '*.ts' 'requirements.txt'
         env:
           build-name: project.zip
-
-      - name: Veracode Upload And Scan
-        uses: veracode/veracode-uploadandscan-action@0.2.1
+      # - name: Veracode Upload And Scan
+      - uses: veracode/veracode-uploadandscan-action@0.2.1
         with:
           appname: 'Verademo API'
           createprofile: false
