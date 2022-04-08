@@ -33,8 +33,8 @@ jobs:
           filepath: './project.zip'
           vid: '${{ secrets.VERACODE_API_ID }}'
           vkey: '${{ secrets.VERACODE_API_KEY }}'
-         sandboxname: 'Github - ${{ github.ref }}'
-         createsandbox: 'true'
+          sandboxname: 'Github - ${{ github.ref }}'
+          createsandbox: 'true'
 #          scantimeout: 0
 #          exclude: '*.js'
 #          include: '*.war'
