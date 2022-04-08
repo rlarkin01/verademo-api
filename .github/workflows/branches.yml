@@ -18,7 +18,7 @@ jobs:
         run: zip -R project.zip '*.py' '*.js' '*.php' '*.ts' 'requirements.txt'
         env:
           build-name: project.zip
-          
+
       - name: Veracode Upload And Scan
         uses: veracode/veracode-uploadandscan-action@0.2.1
         with:
