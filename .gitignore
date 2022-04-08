@@ -1,2 +1,4 @@
 node_modules
 .DS_Store
+filtered_results.json
+results.json
