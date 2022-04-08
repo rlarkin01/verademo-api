@@ -14,11 +14,18 @@ jobs:
       - name: Check out main branch
         uses: actions/checkout@v2
 
-      - name: Zip and Scan Project
+      - name: Zip Project
         run: zip -R project.zip '*.py' '*.js' '*.php' '*.ts' 'requirements.txt'
         env:
           build-name: project.zip
-      # - name: Veracode Upload And Scan
+
+# Copy files from repository to docker container so the next uploadandscan action can access them.
+      - name: Copy artifact to container
+        uses: actions/upload-artifact@v2
+        with:
+          path: project.zip
+
+      - name: Veracode Upload And Scan
       - uses: veracode/veracode-uploadandscan-action@0.2.1
         with:
           appname: 'Verademo API'
